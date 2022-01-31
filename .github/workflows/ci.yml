@@ -25,6 +25,7 @@ jobs:
         with:
           new_branch: 'compiled'
           add: 'assets/*bundle* --force'
+          pull: '--rebase --allow-unrelated-histories'
 
 
   
