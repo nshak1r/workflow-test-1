@@ -27,7 +27,7 @@ jobs:
       - name: Git
         run: |
           git log --oneline -n 1
-          git pull --no-rebase
+          git pull origin compiled --no-rebase
           git push origin compiled --set-upstream
 
 
