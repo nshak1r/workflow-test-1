@@ -17,15 +17,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Force add compiled files
-        run: git add 'assets/*bundle*' --force
-
       - name: Commit
         uses: EndBug/add-and-commit@v8
         with:
           new_branch: 'compiled'
           add: 'assets/*bundle* --force'
-          pull: '--rebase --allow-unrelated-histories'
+          push: false
+
+      - name: Git
+        run: |
+          git log --oneline -n 1
+          git pull --no-rebase
+          git push origin compiled --set-upstream
 
 
   
