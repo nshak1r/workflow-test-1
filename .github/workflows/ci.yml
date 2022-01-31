@@ -27,7 +27,7 @@ jobs:
       - name: Git
         run: |
           git log --oneline -n 1
-          git pull origin compiled --no-rebase --allow-unrelated-histories
+          git pull origin compiled --no-rebase --allow-unrelated-histories -X recursive -s ours
           git push origin compiled --set-upstream
 
 
