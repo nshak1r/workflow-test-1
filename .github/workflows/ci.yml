@@ -31,7 +31,7 @@ jobs:
         #   git push origin compiled --set-upstream
 
         run: |
-          git pull origin compiled --rebase -X theirs
+          git pull origin compiled --rebase -X ours
 
 
   
