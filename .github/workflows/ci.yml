@@ -21,7 +21,7 @@ jobs:
         uses: EndBug/add-and-commit@v8
         with:
           new_branch: 'compiled'
-          add: 'assets/*bundle* --force'
+          add: '[".", "assets/*bundle* --force"]'
           push: false
 
       - name: Git
