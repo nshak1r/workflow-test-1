@@ -207,6 +207,8 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+
+    {{ 'main.bundle.js' | asset_url | script_tag }}
   </head>
 
   <body class="gradient">
