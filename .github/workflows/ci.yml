@@ -25,10 +25,13 @@ jobs:
           push: false
 
       - name: Git
+        # run: |
+        #   git log --oneline -n 1
+        #   git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
+        #   git push origin compiled --set-upstream
+
         run: |
-          git log --oneline -n 1
-          git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
-          git push origin compiled --set-upstream
+          git pull origin compiled --rebase -X theirs
 
 
   
