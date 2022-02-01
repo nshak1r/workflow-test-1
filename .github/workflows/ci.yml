@@ -19,7 +19,7 @@ jobs:
 
       - name: Git
         run: | 
-          git branch -A
+          git branch -a
           git remote -v
 
       - name: Commit
