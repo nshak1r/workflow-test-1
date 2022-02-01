@@ -16,6 +16,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Merge main
+        run: git merge origin/main
+
       - name: Build
         run: npm run build
 
@@ -23,6 +26,11 @@ jobs:
         run: |
           git branch
           git status
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v8
+        with:
+          add: 'assets/*bundle* --force'
 
       # - name: Git
       #   run: | 
