@@ -16,16 +16,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Merge main
-        run: git merge main
-
-      - name: Build
-        run: npm run build
-
       - name : Git
         run: |
           git branch
           git status
+
+      - name: Merge main
+        run: git merge main -X theirs
+
+      - name: Build
+        run: npm run build
 
       - name: Commit
         uses: EndBug/add-and-commit@v8
