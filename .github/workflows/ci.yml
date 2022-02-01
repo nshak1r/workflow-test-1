@@ -19,6 +19,7 @@ jobs:
 
       - name: Git
         run: | 
+          git fetch
           git branch -a
           git remote -v
 
