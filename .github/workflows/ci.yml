@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: 'refs/heads/compiled'
 
       - name: Install dependencies
         run: npm install
@@ -17,36 +19,41 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Git
-        run: | 
-          git fetch
-          git branch -a
-          git remote -v
-
-      - name: Commit
-        uses: EndBug/add-and-commit@v8
-        with:
-          new_branch: 'origin/compiled'
-          add: '[".", "assets/*bundle* --force"]'
-          push: false
-
-      - name: Pull
-        run: git pull origin compiled --rebase -X ours
+      - name : Git
+        run: |
+          git branch
+          git status
 
       # - name: Git
-      #   # run: |
-      #   #   git log --oneline -n 1
-      #   #   git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
-      #   #   git push origin compiled --set-upstream
-      #   # run: |
-      #   #   git pull origin compiled --rebase -X
-      #   run: |
-      #     git log --oneline -n 5
-      #     git merge compiled -X theirs
+      #   run: | 
+      #     git fetch
+      #     git branch -a
+      #     git remote -v
 
-      - name: Push
-        run: |
-          git push origin compiled --set-upstream
+      # - name: Commit
+      #   uses: EndBug/add-and-commit@v8
+      #   with:
+      #     new_branch: 'origin/compiled'
+      #     add: '[".", "assets/*bundle* --force"]'
+      #     push: false
+
+      # - name: Pull
+      #   run: git pull origin compiled --rebase -X ours
+
+      # # - name: Git
+      # #   # run: |
+      # #   #   git log --oneline -n 1
+      # #   #   git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
+      # #   #   git push origin compiled --set-upstream
+      # #   # run: |
+      # #   #   git pull origin compiled --rebase -X
+      # #   run: |
+      # #     git log --oneline -n 5
+      # #     git merge compiled -X theirs
+
+      # - name: Push
+      #   run: |
+      #     git push origin compiled --set-upstream
 
 
   
