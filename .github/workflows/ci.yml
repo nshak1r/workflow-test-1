@@ -15,7 +15,7 @@ jobs:
         run: npm install
 
       - name: Rebase
-        run: git rebase origin/compiled -X ours
+        run: git rebase compiled -X ours
 
       - name: Build
         run: npm run build
