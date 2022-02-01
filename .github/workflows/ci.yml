@@ -21,6 +21,8 @@ jobs:
           git branch
           git status
           git fetch
+          git config --global user.email "nshak@onerockwell.com"
+          git config --global user.name "Nic"
 
       - name: Merge main
         run: git merge origin/main -X theirs --allow-unrelated-histories
