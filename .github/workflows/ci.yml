@@ -24,6 +24,10 @@ jobs:
           add: '[".", "assets/*bundle* --force"]'
           push: false
 
+      - name: Git
+        run: | 
+          git branch
+
       - name: Pull
         run: git pull origin compiled --no-rebase --allow-unrelated-histories -X theirs
 
