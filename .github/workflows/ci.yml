@@ -23,7 +23,7 @@ jobs:
           git fetch
 
       - name: Merge main
-        run: git merge origin/main -X theirs
+        run: git merge origin/main -X theirs --allow-unrelated-histories
 
       - name: Build
         run: npm run build
