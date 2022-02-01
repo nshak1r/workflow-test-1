@@ -20,6 +20,7 @@ jobs:
         run: |
           git branch
           git status
+          git fetch
 
       - name: Merge main
         run: git merge main -X theirs
