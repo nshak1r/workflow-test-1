@@ -147,8 +147,8 @@
   },
   "order": [
     "main",
-    "image-with-text",
     "multicolumn",
+    "image-with-text",
     "product-recommendations"
   ]
 }
