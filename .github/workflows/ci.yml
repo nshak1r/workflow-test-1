@@ -32,6 +32,7 @@ jobs:
         # run: |
         #   git pull origin compiled --rebase -X
         run: |
+          git log --oneline -n 5
           git merge compiled -X theirs
 
       - name: Push
