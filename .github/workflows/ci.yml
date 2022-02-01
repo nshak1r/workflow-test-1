@@ -32,7 +32,7 @@ jobs:
         # run: |
         #   git pull origin compiled --rebase -X
         run: |
-          git merge origin compiled -X theirs
+          git merge compiled -X theirs
 
       - name: Push
         run: |
