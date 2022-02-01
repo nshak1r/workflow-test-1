@@ -20,13 +20,14 @@ jobs:
       - name: Commit
         uses: EndBug/add-and-commit@v8
         with:
-          new_branch: 'origin/compiled'
+          new_branch: compiled
           add: '[".", "assets/*bundle* --force"]'
           push: false
 
       - name: Git
         run: | 
           git branch
+          git remote -v
 
       - name: Pull
         run: git pull origin compiled --rebase -X ours
