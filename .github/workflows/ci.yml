@@ -30,7 +30,7 @@ jobs:
         #   git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
         #   git push origin compiled --set-upstream
         run: |
-          git pull origin compiled --rebase -X ours
+          git pull origin compiled --rebase -X ours --reapply-cherry-picks
 
       - name: Push
         run: |
