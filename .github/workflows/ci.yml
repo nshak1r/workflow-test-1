@@ -19,13 +19,13 @@ jobs:
 
       - name: Git
         run: | 
-          git branch
+          git branch -A
           git remote -v
 
       - name: Commit
         uses: EndBug/add-and-commit@v8
         with:
-          new_branch: compiled
+          new_branch: 'remotes/origin/compiled'
           add: '[".", "assets/*bundle* --force"]'
           push: false
 
