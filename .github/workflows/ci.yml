@@ -25,7 +25,7 @@ jobs:
           push: false
 
       - name: Pull
-        run: git pull --no-rebase --allow-unrelated-histories -X theirs
+        run: git pull origin compiled --no-rebase --allow-unrelated-histories -X theirs
 
       # - name: Git
       #   # run: |
