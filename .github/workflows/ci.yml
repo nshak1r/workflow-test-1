@@ -25,7 +25,9 @@ jobs:
           git config --global user.name "Nic"
 
       - name: Merge main
-        run: git merge origin/main -X theirs --allow-unrelated-histories
+        run: |
+          git merge origin/main -X theirs --allow-unrelated-histories
+          git push
 
       - name: Build
         run: npm run build
