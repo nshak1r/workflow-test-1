@@ -24,19 +24,13 @@ jobs:
           add: '[".", "assets/*bundle* --force"]'
           push: false
 
-      - name: Pull
-        run: git pull origin compiled --no-rebase --allow-unrelated-histories -X theirs
-
-      # - name: Git
-      #   # run: |
-      #   #   git log --oneline -n 1
-      #   #   git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
-      #   #   git push origin compiled --set-upstream
-      #   # run: |
-      #   #   git pull origin compiled --rebase -X
-      #   run: |
-      #     git log --oneline -n 5
-      #     git merge compiled -X theirs
+      - name: Git
+        # run: |
+        #   git log --oneline -n 1
+        #   git pull origin compiled --no-rebase --allow-unrelated-histories -X ours
+        #   git push origin compiled --set-upstream
+        run: |
+          git pull origin compiled --rebase -X theirs
 
       - name: Push
         run: |
