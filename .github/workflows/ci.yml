@@ -26,7 +26,7 @@ jobs:
       - name: Commit
         uses: EndBug/add-and-commit@v8
         with:
-          new_branch: 'remotes/origin/compiled'
+          new_branch: 'origin/compiled'
           add: '[".", "assets/*bundle* --force"]'
           push: false
 
