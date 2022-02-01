@@ -30,8 +30,8 @@
         }
       },
       "block_order": [
-        "text",
         "heading",
+        "text",
         "button"
       ],
       "settings": {

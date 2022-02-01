@@ -26,7 +26,7 @@ jobs:
 
       - name: Merge main
         run: |
-          git merge origin/main -X theirs --allow-unrelated-histories
+          git merge origin/main -X ours --allow-unrelated-histories
           git push
 
       - name: Build
